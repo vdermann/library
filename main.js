@@ -15,16 +15,7 @@ addBookBtn.addEventListener("click", (event) =>  {
 // Closes the form.
 closeModalBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  // Gets book details.
-  const bookTitle = document.querySelector("#title");
-  const bookAuthor = document.querySelector("#author");
-  const bookPages = document.querySelector("#pages");
-  const bookWasRead = document.querySelector("#read");
-  // Reset the input fields.
-  bookTitle.value = "";
-  bookAuthor.value = "";
-  bookPages.value = "";
-  bookWasRead.checked = false;
+  document.querySelector("form").reset();  // Reset the input fields.
   formModal.close();  
 });
 
@@ -58,22 +49,20 @@ function addBookToLibrary(title, author, pages, read) {
 // Manipulation of form data.
 const addNewBook = document.querySelector("#addNewBook"); 
 addNewBook.addEventListener("click", (event) => {
-  event.preventDefault();
-  // Gets book details.
-  const bookTitle = document.querySelector("#title");
-  const bookAuthor = document.querySelector("#author");
-  const bookPages = document.querySelector("#pages");
-  const bookWasRead = document.querySelector("#read");
-
-  addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookWasRead.checked);
-
-  // Reset the input fields.
-  bookTitle.value = "";
-  bookAuthor.value = "";
-  bookPages.value = "";
-  bookWasRead.checked = false;
-
-  formModal.close()
+  let isFormComplete = document.querySelector("form").checkValidity();
+  if (!isFormComplete) {
+    document.querySelector("form").reportValidity();
+  } else {
+    event.preventDefault();
+    // Gets book details.
+    const bookTitle = document.querySelector("#title");
+    const bookAuthor = document.querySelector("#author");
+    const bookPages = document.querySelector("#pages");
+    const bookWasRead = document.querySelector("#read");
+    addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookWasRead.checked);
+    document.querySelector("form").reset();   // Reset the input fields.
+    formModal.close()
+  }
 })
 
 
