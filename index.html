@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Brawler:wght@400;700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Library</title>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Library</h1>
+    <div class="line"></div>
+    <p>(or books to be read)</p>
+  </header>
+
+  <main>
+    <button class="addBook" id="showModal">add book</button>
+    <div class="booksContainer">
+      <!-- This commented code was manually added for layout -->
+      <!-- <div class="bookCard">
+        <div class="bookDetails">
+          <p class="book__title">Siddhartha</p>
+          <p class="book__author">Hermann Hesse</p>
+          <p class="book__pages">156 pages</p>
+          <p class="book__read">Read</p>
+        </div>
+        <div class="bookButtons">
+          <button class="svgButton" id="toggleRead">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Mark as read</title><path d="M16.75 22.16L14 19.16L15.16 18L16.75 19.59L20.34 16L21.5 17.41L16.75 22.16M18 2C19.1 2 20 2.9 20 4V13.34C19.37 13.12 18.7 13 18 13V4H13V12L10.5 9.75L8 12V4H6V20H12.08C12.2 20.72 12.45 21.39 12.8 22H6C4.9 22 4 21.1 4 20V4C4 2.9 4.9 2 6 2H18Z" /></svg>
+          </button>
+          <button class="svgButton" id="removeBook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Remove</title><path d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V5H19V19M17,8.4L13.4,12L17,15.6L15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4Z" /></svg>
+          </button>
+        </div>
+      </div> -->
+    </div>
+  </main>
+
+  <footer class="footer">Copyright 2025 Deihva</footer>
+
+  <dialog closedby="any">
+    <form action="">
+      <p class="formField">
+        <label for="title">Title</label>
+        <input required type="text" id="title">
+      </p>
+      <p class="formField">
+        <label for="author">Author</label>
+        <input required type="text" id="author">
+      </p>
+      <p class="formField">
+        <label for="pages">Pages</label>
+        <input required type="tel" id="pages">
+      </p>
+      <p class="formField">
+        <div class="readDiv">
+          <label for="read">Have you read it?</label>
+          <input required type="checkbox" id="read">
+        </div>
+      </p>
+      <p class="formButtons">
+        <button class="closeModal" id="closeModal">close</button>
+        <button class="addBook" id="addNewBook">add book</button>
+      </p>
+    </form>
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
